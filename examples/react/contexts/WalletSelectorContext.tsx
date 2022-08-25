@@ -39,7 +39,7 @@ export const WalletSelectorContextProvider: React.FC = ({ children }) => {
 
   const init = useCallback(async () => {
     const _selector = await setupWalletSelector({
-      network: "testnet",
+      network: "mainnet",
       debug: true,
       modules: [
         ...(await setupDefaultWallets()),
