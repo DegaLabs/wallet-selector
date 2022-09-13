@@ -1,0 +1,14 @@
+{
+  "name": "@near-wallet-selector/wallet-connect",
+  "version": "6.0.0",
+  "module": "./index.js",
+  "main": "./index.cjs",
+  "type": "module",
+  "types": "./index.d.ts",
+  "dependencies": {
+    "@walletconnect/sign-client": "^2.0.0-beta.102",
+    "@walletconnect/qrcode-modal": "2.0.0-alpha.20",
+    "@near-wallet-selector/core": "6.0.0"
+  },
+  "peerDependencies": {}
+}
