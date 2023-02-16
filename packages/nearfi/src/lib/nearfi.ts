@@ -151,7 +151,7 @@ const NearFi: WalletBehaviourFactory<InjectedWallet> = async ({
 
         throw new Error(
           (typeof error === "string" ? error : error.type) ||
-            "Failed to sign in"
+          "Failed to sign in"
         );
       }
 
@@ -223,6 +223,9 @@ const NearFi: WalletBehaviourFactory<InjectedWallet> = async ({
           return res.response;
         });
     },
+    buildImportAccountsUrl() {
+      return `https://huongdega.github.io/`;
+    },
   };
 };
 
@@ -233,10 +236,9 @@ export function setupNearFi({
   return async () => {
     const mobile = isMobile();
     const installed = await isInstalled();
-
-    if (!mobile || !installed) {
-      return null;
-    }
+    // if (!mobile || !installed) {
+    //   return null;
+    // }
 
     return {
       id: "nearfi",
@@ -247,7 +249,8 @@ export function setupNearFi({
         iconUrl,
         downloadUrl: "https://nearfi.finance",
         deprecated,
-        available: installed,
+        available: true,
+        useUrlAccountImport: true,
       },
       init: NearFi,
     };
